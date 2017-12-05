@@ -1,0 +1,17 @@
+{
+    "restartable": "rss",
+    "verbose": false,
+    "execMap": [
+      {
+        "js": "node --harmony"
+      }
+    ],
+    "ignore": [
+      ".git",
+      "node_modules",
+      ".idea"
+    ],
+    "watch": [
+      "config/"
+    ]
+  }
