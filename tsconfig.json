@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": ".",
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "allowUnreachableCode": true,
+    // "noUnusedLocals": true,
+    "lib": [
+      "dom",
+      "esnext"
+    ],
+    "paths": {
+      "app2/*": [
+        "static/app2/*"
+      ],
+      "palette/*": [
+        "static/palette/*"
+      ]
+    }
+  },
+  "typeRoots": ["./node_modules/@types"],
+  "exclude": [
+    "node_modules"
+  ],
+  // The following is required, otherwise language service may fail
+  "include": [
+    "src/**/*"
+  ]
+}

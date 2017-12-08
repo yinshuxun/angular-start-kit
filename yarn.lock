@@ -83,8 +83,8 @@
     tslib "^1.7.1"
 
 "@ngtools/webpack@^1.8.0":
-  version "1.8.5"
-  resolved "http://registry.npm.taobao.org/@ngtools/webpack/download/@ngtools/webpack-1.8.5.tgz#f35b646f58db1d4ac5938031051a0f9187d91961"
+  version "1.9.0"
+  resolved "http://registry.npm.taobao.org/@ngtools/webpack/download/@ngtools/webpack-1.9.0.tgz#ef395c45be2de9beb93a2b9f5f171d28c344eb10"
   dependencies:
     chalk "~2.2.0"
     enhanced-resolve "^3.1.0"
@@ -279,6 +279,12 @@ alphanum-sort@^1.0.1, alphanum-sort@^1.0.2:
 amdefine@>=0.0.4:
   version "1.0.1"
   resolved "http://registry.npm.taobao.org/amdefine/download/amdefine-1.0.1.tgz#4a5282ac164729e93619bcfd3ad151f817ce91f5"
+
+angular-router-loader@^0.8.0:
+  version "0.8.0"
+  resolved "http://registry.npm.taobao.org/angular-router-loader/download/angular-router-loader-0.8.0.tgz#d73acb1c88a135823c7841c997a99375c7f54af5"
+  dependencies:
+    loader-utils "^1.0.2"
 
 angular2-template-loader@^0.6.2:
   version "0.6.2"
@@ -483,7 +489,7 @@ autoprefixer@^6.3.1:
     postcss "^5.2.16"
     postcss-value-parser "^3.2.3"
 
-awesome-typescript-loader@^3.3.0:
+awesome-typescript-loader@^3.4.1:
   version "3.4.1"
   resolved "http://registry.npm.taobao.org/awesome-typescript-loader/download/awesome-typescript-loader-3.4.1.tgz#22fa49800f0619ec18ab15383aef93b95378dea9"
   dependencies:
@@ -1110,9 +1116,9 @@ block-stream@*:
   dependencies:
     inherits "~2.0.0"
 
-blocking-proxy@0.0.5:
-  version "0.0.5"
-  resolved "http://registry.npm.taobao.org/blocking-proxy/download/blocking-proxy-0.0.5.tgz#462905e0dcfbea970f41aa37223dda9c07b1912b"
+blocking-proxy@^1.0.0:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/blocking-proxy/download/blocking-proxy-1.0.1.tgz#81d6fd1fe13a4c0d6957df7f91b75e98dac40cb2"
   dependencies:
     minimist "^1.2.0"
 
@@ -4478,8 +4484,8 @@ node-sass@^4.5.2:
     "true-case-path" "^1.0.2"
 
 nodemon@^1.12.4:
-  version "1.12.4"
-  resolved "http://registry.npm.taobao.org/nodemon/download/nodemon-1.12.4.tgz#b3cedad2845ee27298aa889b903b2e324fe57cda"
+  version "1.12.5"
+  resolved "http://registry.npm.taobao.org/nodemon/download/nodemon-1.12.5.tgz#bd34afa1aa855f1996b561147848519f136de620"
   dependencies:
     chokidar "^1.7.0"
     debug "^2.6.8"
@@ -5223,13 +5229,13 @@ promise-inflight@^1.0.1:
   resolved "http://registry.npm.taobao.org/promise-inflight/download/promise-inflight-1.0.1.tgz#98472870bf228132fcbdd868129bad12c3c029e3"
 
 protractor@^5.1.1:
-  version "5.2.0"
-  resolved "http://registry.npm.taobao.org/protractor/download/protractor-5.2.0.tgz#d3f39b195e85f3539ad9d8cb6560a9d2b63297c4"
+  version "5.2.1"
+  resolved "http://registry.npm.taobao.org/protractor/download/protractor-5.2.1.tgz#b4e4b6145c71f94e617b006ee353e05651eab88d"
   dependencies:
     "@types/node" "^6.0.46"
     "@types/q" "^0.0.32"
     "@types/selenium-webdriver" "~2.53.39"
-    blocking-proxy "0.0.5"
+    blocking-proxy "^1.0.0"
     chalk "^1.1.3"
     glob "^7.0.3"
     jasmine "^2.5.3"
@@ -5729,10 +5735,10 @@ run-queue@^1.0.0, run-queue@^1.0.3:
     aproba "^1.1.1"
 
 rxjs@^5.5.2:
-  version "5.5.3"
-  resolved "http://registry.npm.taobao.org/rxjs/download/rxjs-5.5.3.tgz#b62227e74b84f4e77bdf440e50b5ee01a1bc7dcd"
+  version "5.5.5"
+  resolved "http://registry.npm.taobao.org/rxjs/download/rxjs-5.5.5.tgz#e164f11d38eaf29f56f08c3447f74ff02dd84e97"
   dependencies:
-    symbol-observable "^1.0.1"
+    symbol-observable "1.0.1"
 
 safe-buffer@5.1.1, safe-buffer@^5.0.1, safe-buffer@^5.1.0, safe-buffer@^5.1.1, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.1"
@@ -6341,9 +6347,9 @@ svgo@^0.7.0:
     sax "~1.2.1"
     whet.extend "~0.9.9"
 
-symbol-observable@^1.0.1:
-  version "1.1.0"
-  resolved "http://registry.npm.taobao.org/symbol-observable/download/symbol-observable-1.1.0.tgz#5c68fd8d54115d9dfb72a84720549222e8db9b32"
+symbol-observable@1.0.1:
+  version "1.0.1"
+  resolved "http://registry.npm.taobao.org/symbol-observable/download/symbol-observable-1.0.1.tgz#8340fc4702c3122df5d22288f88283f513d3fdd4"
 
 tapable@^0.2.5, tapable@^0.2.7:
   version "0.2.8"
@@ -6516,8 +6522,8 @@ tsickle@^0.24.0:
     source-map-support "^0.4.2"
 
 tslib@^1.7.1:
-  version "1.8.0"
-  resolved "http://registry.npm.taobao.org/tslib/download/tslib-1.8.0.tgz#dc604ebad64bcbf696d613da6c954aa0e7ea1eb6"
+  version "1.8.1"
+  resolved "http://registry.npm.taobao.org/tslib/download/tslib-1.8.1.tgz#6946af2d1d651a7b1863b531d6e5afa41aa44eac"
 
 tslint-loader@^3.5.2:
   version "3.5.3"

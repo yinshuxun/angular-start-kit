@@ -1,18 +1,19 @@
 import path from 'path'
 import { root } from './helpers'
 import HtmlWebpackPlugin from 'html-webpack-plugin'
+import webpack from 'webpack'
 import DefinePlugin from 'webpack/lib/DefinePlugin'
-import { ngcWebpackSetup ,DEFAULT_METADATA} from './build-utils'
+import { DEFAULT_METADATA } from './build-utils'
 
 const entry = {
     main: root('src/main.ts'),
     polyfills: root('src/polyfills.ts')
 }
 
-module.exports = function(options) {
+module.exports = function (options) {
     const isProd = options.env === 'production';
     const METADATA = Object.assign({}, DEFAULT_METADATA, options.metadata || {});
-    const ngcWebpackConfigs = ngcWebpackSetup(isProd, METADATA)
+    // const ngcWebpackConfigs = ngcWebpackSetup(isProd, METADATA)
 
     return {
         entry,
@@ -20,9 +21,27 @@ module.exports = function(options) {
             path: root('dist'),
             filename: '[name].bundle.js'
         },
+        resolve: {
+            extensions: ['.ts', '.js', '.json'],
+        },
         module: {
             rules: [
-                ...ngcWebpackConfigs.loaders,
+                // ...ngcWebpackConfigs.loaders,
+                {
+                    test: /\.ts$/,
+                    exclude: [/\.spec\.ts$/],
+                    use: [
+                        {
+                            loader: 'awesome-typescript-loader',
+                            options: {
+                                useBabel: true,
+                                useCache: true,
+                            },
+                        },
+                        'angular2-template-loader',
+                        'angular-router-loader',
+                    ],
+                },
                 {
                     test: /\.css$/,
                     use: ['to-string-loader', 'css-loader'],
@@ -49,7 +68,7 @@ module.exports = function(options) {
             ],
         },
         plugins: [
-            new DefinePlugin({
+            new webpack.DefinePlugin({
                 'ENV': JSON.stringify(METADATA.ENV),
                 'AOT': METADATA.AOT,
                 'process.env.ENV': JSON.stringify(METADATA.ENV),
@@ -70,7 +89,8 @@ module.exports = function(options) {
                     collapseWhitespace: true,
                     keepClosingSlash: true
                 } : false
-            })
+            }),
+            new webpack.ContextReplacementPlugin(/colors$/, /^$/)
         ]
     }
 }
