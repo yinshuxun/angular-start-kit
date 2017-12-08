@@ -2,12 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { APP_BASE_HREF } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreModule } from '@ngrx/store'
 
 import { AppComponent } from './app.component';
 import { Page1 } from './page1/page1.component'
 import { PageNotFound } from './pageNotFound/PageNotFound.component'
+
+import { counterReducer } from './ars/reducer/counter'
 
 const appRoutes: Routes = [
   { path: 'page1', component: Page1 },
@@ -27,13 +30,14 @@ const appRoutes: Routes = [
   ],
   imports: [
     RouterModule.forRoot(appRoutes, {
-      enableTracing: true
+      enableTracing: true,
+      useHash: true
     }),
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    StoreModule.forRoot({ counter: counterReducer })
   ],
-  providers: [{ provide: APP_BASE_HREF, useValue: '/page1' }],
   bootstrap: [AppComponent]
 })
 

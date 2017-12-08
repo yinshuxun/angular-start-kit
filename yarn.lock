@@ -82,6 +82,22 @@
   dependencies:
     tslib "^1.7.1"
 
+"@ngrx/core@^1.2.0":
+  version "1.2.0"
+  resolved "http://registry.npm.taobao.org/@ngrx/core/download/@ngrx/core-1.2.0.tgz#882b46abafa2e0e6d887cb71a1b2c2fa3e6d0dc6"
+
+"@ngrx/effects@^4.1.1":
+  version "4.1.1"
+  resolved "http://registry.npm.taobao.org/@ngrx/effects/download/@ngrx/effects-4.1.1.tgz#cb758b8527964b258ea41951f59aa144e3ef9fae"
+
+"@ngrx/store-devtools@^4.1.1":
+  version "4.1.1"
+  resolved "http://registry.npm.taobao.org/@ngrx/store-devtools/download/@ngrx/store-devtools-4.1.1.tgz#20745c39c7560fdc05fa4f22638442a7ec7dd676"
+
+"@ngrx/store@^4.1.1":
+  version "4.1.1"
+  resolved "http://registry.npm.taobao.org/@ngrx/store/download/@ngrx/store-4.1.1.tgz#680e34df2775e8852754ed777ffac95bd81b7de0"
+
 "@ngtools/webpack@^1.8.0":
   version "1.9.0"
   resolved "http://registry.npm.taobao.org/@ngtools/webpack/download/@ngtools/webpack-1.9.0.tgz#ef395c45be2de9beb93a2b9f5f171d28c344eb10"
@@ -93,6 +109,10 @@
     semver "^5.3.0"
     source-map "^0.5.6"
     tree-kill "^1.0.0"
+
+"@ngx-translate/core@^8.0.0":
+  version "8.0.0"
+  resolved "http://registry.npm.taobao.org/@ngx-translate/core/download/@ngx-translate/core-8.0.0.tgz#751fd6b512d80f3a748d2de8dfc96dfefa29afe0"
 
 "@types/events@*":
   version "1.1.0"
