@@ -1,12 +1,10 @@
 import { Component } from '@angular/core'
 
 @Component({
-    template:`<div>找不到当前页面</div>`,
-    styles:[`:host div{
-        font-size:30px;
-        color:'red';
-        text-align:center;
-    }`]
+    selector:'PageNotFound',
+    template:`<div>
+        <h1>404</h1>
+    </div>`
 })
 
 export class PageNotFound{
