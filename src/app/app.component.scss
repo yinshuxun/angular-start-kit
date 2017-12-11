@@ -17,3 +17,9 @@
     background: #cecaca;
     min-height: 400px;
 }
+:host /deep/ .sk-page{
+    flex:1;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
