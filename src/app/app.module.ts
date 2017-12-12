@@ -8,9 +8,13 @@ import { AppComponent } from './app.component';
 import { Page1 } from './page1/page1.component'
 import { Page2 } from './page2/page2.component'
 import { PageNotFound } from './pageNotFound/pageNotFound.component'
+import { UserList } from './components/user-list/user-list.componet'
 
-import {UnlessDirective} from './directive/unless.directive'
-import {MyHighlightDirective} from './directive/myHighlight.directive'
+import { UnlessDirective } from './directive/unless.directive'
+import { MyHighlightDirective } from './directive/myHighlight.directive'
+
+import { ActiveTitleService } from './service/ActiveTitle.service'
+import { Logger } from './service/logger.service'
 
 import { counterReducer } from './ars/reducer/counter'
 import { AppRoutingModule } from './app-routing.module';
@@ -22,7 +26,8 @@ import { AppRoutingModule } from './app-routing.module';
     Page1,
     Page2,
     UnlessDirective,
-    MyHighlightDirective
+    MyHighlightDirective,
+    UserList
   ],
   imports: [
     AppRoutingModule,
@@ -31,6 +36,7 @@ import { AppRoutingModule } from './app-routing.module';
     HttpModule,
     StoreModule.forRoot({ counter: counterReducer })
   ],
+  providers: [ActiveTitleService, Logger],
   bootstrap: [AppComponent]
 })
 
