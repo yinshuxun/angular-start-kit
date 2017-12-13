@@ -24,8 +24,13 @@
       ],
       "palette/*": [
         "static/palette/*"
-      ]
+      ],
+      "app/*": ["src/app/*"]
     }
+  },
+  "angularCompilerOptions": {
+    "genDir": "aot",
+    "skipMetadataEmit": true
   },
   "typeRoots": ["./node_modules/@types"],
   "exclude": [

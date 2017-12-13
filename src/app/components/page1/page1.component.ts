@@ -1,5 +1,5 @@
 import { Component } from '@angular/core'
-import { INCREMENT, DECREMENT, RESET } from '../ars/reducer/counter';
+import { INCREMENT, DECREMENT, RESET } from 'app/ars/reducer/counter';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store'
 
@@ -28,6 +28,7 @@ export class Page1 {
         setTimeout(function(){
             self.store.dispatch({ type: DECREMENT });
         },1000)
+        
     }
 
     reset() {

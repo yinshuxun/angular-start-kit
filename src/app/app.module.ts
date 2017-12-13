@@ -5,8 +5,8 @@ import { HttpModule } from '@angular/http';
 import { StoreModule } from '@ngrx/store'
 
 import { AppComponent } from './app.component';
-import { Page1 } from './page1/page1.component'
-import { Page2 } from './page2/page2.component'
+import { Page1 } from 'app/components/page1/page1.component'
+import { Page2 } from 'app/components/page2/page2.component'
 import { PageNotFound } from './pageNotFound/pageNotFound.component'
 import { UserList } from './components/user-list/user-list.componet'
 

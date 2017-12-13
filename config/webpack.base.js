@@ -4,10 +4,12 @@ import HtmlWebpackPlugin from 'html-webpack-plugin'
 import webpack from 'webpack'
 import DefinePlugin from 'webpack/lib/DefinePlugin'
 import { DEFAULT_METADATA } from './build-utils'
+// var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const entry = {
     main: root('src/main.ts'),
-    polyfills: root('src/polyfills.ts')
+    polyfills: root('src/polyfills.ts'),
+    vendor: [root('src/vendor.entry.ts')]
 }
 
 module.exports = function (options) {
@@ -19,10 +21,17 @@ module.exports = function (options) {
         entry,
         output: {
             path: root('dist'),
-            filename: '[name].bundle.js'
+            filename: '[name].[hash].js',
+            chunkFilename:'[id].[hash].js'
         },
         resolve: {
             extensions: ['.ts', '.js', '.json'],
+            alias: {
+                app: root('src/app'),
+                ars: root('src/app/ars'),
+                components: root('src/app/components'),
+                service: root('src/app/service')
+            }
         },
         module: {
             rules: [
@@ -68,12 +77,19 @@ module.exports = function (options) {
             ],
         },
         plugins: [
+            // new BundleAnalyzerPlugin(),
             new webpack.DefinePlugin({
                 'ENV': JSON.stringify(METADATA.ENV),
                 'AOT': METADATA.AOT,
                 'process.env.ENV': JSON.stringify(METADATA.ENV),
                 'process.env.NODE_ENV': JSON.stringify(METADATA.ENV)
             }),
+            // 启动热替换 
+            // new webpack.HotModuleReplacementPlugin(),
+            // /* 公共库 */
+            // new webpack.optimize.CommonsChunkPlugin({
+            //     names: ['vendor','mainfest']
+            // }),
             new HtmlWebpackPlugin({
                 template: 'src/index.html',
                 title: METADATA.title,
