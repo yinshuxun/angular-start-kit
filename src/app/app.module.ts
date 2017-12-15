@@ -7,8 +7,10 @@ import { StoreModule } from '@ngrx/store'
 import { AppComponent } from './app.component';
 import { Page1 } from 'app/components/page1/page1.component'
 import { Page2 } from 'app/components/page2/page2.component'
+import { Page3 } from 'app/components/page3/page3.component'
 import { PageNotFound } from './pageNotFound/pageNotFound.component'
 import { UserList } from './components/user-list/user-list.componet'
+import { SimpleForm } from 'app/components/simple-form'
 
 import { UnlessDirective } from './directive/unless.directive'
 import { MyHighlightDirective } from './directive/myHighlight.directive'
@@ -25,9 +27,11 @@ import { AppRoutingModule } from './app-routing.module';
     PageNotFound,
     Page1,
     Page2,
+    Page3,
     UnlessDirective,
     MyHighlightDirective,
-    UserList
+    UserList,
+    SimpleForm
   ],
   imports: [
     AppRoutingModule,

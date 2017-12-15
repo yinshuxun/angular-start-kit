@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'
 
+
 @Component({
     selector:'PageNotFound',
     template:`<div class='sk-page'>
