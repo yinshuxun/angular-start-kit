@@ -3,7 +3,6 @@ import { INCREMENT, DECREMENT, RESET } from 'app/ars/reducer/counter';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store'
 import { ActiveTitleService } from 'app/service/ActiveTitle.service';
-import {SimpleForm} from '../simple-form'
 
 interface AppState {
     counter: number
@@ -16,27 +15,10 @@ interface AppState {
 
 export class Page2 {
     private isShow: boolean = false
-    counter: Observable<Number>
     title: string = 'this is page2'
     formData:object
 
-    constructor(private store: Store<AppState>, activeTitleService: ActiveTitleService) {
-        this.counter = store.select('counter');
+    constructor( activeTitleService: ActiveTitleService) {
         this.title = activeTitleService.getTitle()
-    }
-
-    increment() {
-        this.store.dispatch({ type: INCREMENT });
-    }
-
-    decrement() {
-        const self = this
-        setTimeout(function () {
-            self.store.dispatch({ type: DECREMENT });
-        }, 1000)
-    }
-
-    reset() {
-        this.store.dispatch({ type: RESET });
     }
 }

@@ -2,48 +2,25 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-import { StoreModule } from '@ngrx/store'
 
 import { AppComponent } from './app.component';
-import { Page1 } from 'app/components/page1/page1.component'
-import { Page2 } from 'app/components/page2/page2.component'
-import { Page3 } from 'app/components/page3/page3.component'
 import { PageNotFound } from './pageNotFound/pageNotFound.component'
-import { UserList } from './components/user-list/user-list.componet'
-import { SimpleForm } from 'app/components/simple-form'
 
-import { UnlessDirective } from './directive/unless.directive'
-import { MyHighlightDirective } from './directive/myHighlight.directive'
+import { AppRoutingModule } from './app-routing.module'
 
-import { ActiveTitleService } from './service/ActiveTitle.service'
-import { Logger } from './service/logger.service'
-
-import { counterReducer } from './ars/reducer/counter'
-import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PageNotFound,
-    Page1,
-    Page2,
-    Page3,
-    UnlessDirective,
-    MyHighlightDirective,
-    UserList,
-    SimpleForm
-  ],
-  imports: [
-    AppRoutingModule,
-    BrowserModule,
-    FormsModule,
-    HttpModule,
-    StoreModule.forRoot({ counter: counterReducer })
-  ],
-  providers: [ActiveTitleService, Logger],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        PageNotFound
+    ],
+    imports: [
+        BrowserModule,
+        FormsModule,
+        HttpModule,
+        AppRoutingModule
+    ],
+    bootstrap: [AppComponent]
 })
 
-export class AppModule {
-
-}
+export class AppModule { }

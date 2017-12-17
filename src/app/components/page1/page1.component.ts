@@ -28,7 +28,7 @@ export class Page1 {
         setTimeout(function(){
             self.store.dispatch({ type: DECREMENT });
         },1000)
-        
+
     }
 
     reset() {

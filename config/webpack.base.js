@@ -20,9 +20,10 @@ module.exports = function (options) {
     return {
         entry,
         output: {
+            publicPath: '/',
             path: root('dist'),
             filename: '[name].[hash].js',
-            chunkFilename:'[id].[hash].js'
+            chunkFilename: '[id].chunk.js'
         },
         resolve: {
             extensions: ['.ts', '.js', '.json'],
@@ -84,12 +85,21 @@ module.exports = function (options) {
                 'process.env.ENV': JSON.stringify(METADATA.ENV),
                 'process.env.NODE_ENV': JSON.stringify(METADATA.ENV)
             }),
-            // 启动热替换 
+            // 启动热替换
             // new webpack.HotModuleReplacementPlugin(),
             // /* 公共库 */
             // new webpack.optimize.CommonsChunkPlugin({
             //     names: ['vendor','mainfest']
             // }),
+            new webpack.optimize.CommonsChunkPlugin({
+                names: ['vendors', 'manifest'],
+                minChunks: Infinity
+            }),
+            new webpack.optimize.CommonsChunkPlugin({
+                name: 'commons',
+                async: true,
+                minChunks: 3
+            }),
             new HtmlWebpackPlugin({
                 template: 'src/index.html',
                 title: METADATA.title,

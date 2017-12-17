@@ -3,7 +3,7 @@ import { User } from 'app/beans/user.class'
 
 @Component({
     selector: "simple-form",
-    templateUrl: "./index.html",
+    templateUrl: "./simple-form.html",
     styles: [':host /deep/ .demo-form-container { padding: 10px 300px}']
 })
 

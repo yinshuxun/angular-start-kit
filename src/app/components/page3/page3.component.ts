@@ -1,6 +1,6 @@
 import { Component } from '@angular/core'
+
 import { ActiveTitleService } from 'app/service/ActiveTitle.service';
-import {SimpleForm} from '../simple-form'
 import { User } from 'app/beans/user.class'
 
 interface AppState {

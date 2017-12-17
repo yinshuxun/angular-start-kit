@@ -1,19 +1,20 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Page1 } from 'app/components/page1/page1.component'
-import { Page2 } from 'app/components/page2/page2.component'
-import { Page3 } from 'app/components/page3/page3.component'
 import { PageNotFound } from './pageNotFound/pageNotFound.component';
 
 const appRoutes: Routes = [
-    { path: 'page1', component: Page1 },
     {
-        path: 'page2',
-        component: Page2
+        path: 'page1',
+        loadChildren: 'app/components/page1/page1.module#Page1Module'
     },
     {
+        path: 'page2',
+        loadChildren: 'app/components/page2/page2.module#Page2Module'
+    },
+    {
+
         path: 'page3',
-        component: Page3
+        loadChildren: 'app/components/page3/page3.module#Page3Module'
     },
     {
         path: '',
@@ -27,11 +28,11 @@ const appRoutes: Routes = [
     imports: [
         RouterModule.forRoot(appRoutes, {
             useHash: true,
-            enableTracing: true
+            // enableTracing: true
         })
     ],
     exports: [
         RouterModule
-    ],
+    ]
 })
 export class AppRoutingModule { }
