@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --exec \"npm run webpack-dev-server -- --config ./entry.js --open --progress --profile --watch --content-base src/\"",
+    "dev": "nodemon --exec \"npm run webpack-dev-server -- --config ./entry.js --open --progress --profile --watch\"",
     "webpack-dev-server": "node --max_old_space_size=4096 node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "webpack": "node --max_old_space_size=4096 node_modules/webpack/bin/webpack.js",
     "build": "npm run build:dev",

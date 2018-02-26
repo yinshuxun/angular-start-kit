@@ -18,6 +18,14 @@ module.exports = function (options) {
     // const ngcWebpackConfigs = ngcWebpackSetup(isProd, METADATA)
 
     return {
+        devServer: {
+            port: process.env.PORT || 8080,
+            host: 'localhost',
+            // publicPath: ‘/’,
+            contentBase: './src',
+            historyApiFallback: true,
+            open: true
+        },
         entry,
         output: {
             publicPath: '/',
@@ -85,6 +93,7 @@ module.exports = function (options) {
                 'process.env.ENV': JSON.stringify(METADATA.ENV),
                 'process.env.NODE_ENV': JSON.stringify(METADATA.ENV)
             }),
+
             // 启动热替换
             // new webpack.HotModuleReplacementPlugin(),
             // /* 公共库 */
